@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+.citation-ref {
+  margin: 0 0.12rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: #dbeafe;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.2rem 0.32rem;
+  vertical-align: super;
+}
+
+.citation-ref:hover,
+.citation-ref:focus-visible {
+  background: #bfdbfe;
+  outline: 2px solid #60a5fa;
+  outline-offset: 1px;
+}
