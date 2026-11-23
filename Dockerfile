@@ -28,7 +28,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY --from=frontend-build /app/frontend/dist /usr/share/nginx/html
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh \
+RUN sed -i 's/\r$//' /usr/local/bin/entrypoint.sh \
+    && chmod +x /usr/local/bin/entrypoint.sh \
     && rm -f /etc/nginx/sites-enabled/default
 
 EXPOSE 8080
